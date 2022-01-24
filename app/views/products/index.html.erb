@@ -1,11 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>Productos</h2>
 <ul>
  <% @products.each do |product| %>
  <div class='card p-2 m-4 col-3' >
    <h5><%= product.name %>  </h5>
    <h6><%= product.description %>  </h6>
    <h6><%= product.price %>  </h6>
+   <h6><%= product.user_id %>  </h6>
    <h6><%= link_to 'Show', product %></h6>
    </div>
  <% end %>
