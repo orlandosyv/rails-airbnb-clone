@@ -1,5 +1,5 @@
 <h2>Productos</h2>
-<ul>
+<div class='container d-flex flex-wrap'>
  <% @products.each do |product| %>
  <div class='card p-2 m-4 col-3' >
    <h5><%= product.name %>  </h5>
@@ -9,5 +9,10 @@
    <h6><%= link_to 'Show', product %></h6>
    </div>
  <% end %>
-</ul>
-<%= link_to "log out",  destroy_user_session_path, method: 'delete' %>
+
+</div>
+
+<div >
+  <%= link_to "log out",  destroy_user_session_path, method: 'delete' %>  
+</div>
+
