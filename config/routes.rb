@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :orders, only: %i[new create]
   end
 
-  resources :orders, only: %i[show] do
+  resources :orders, only: %i[index show] do
     resources :reviews, only: %i[new create]
   end
 end
