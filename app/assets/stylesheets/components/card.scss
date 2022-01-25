@@ -1,6 +1,6 @@
 .cards-lists {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 56px;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .card-category {
@@ -16,4 +16,8 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  opacity: 0.9;
+}
+.card-category:hover{
+  opacity: 1;
 }
