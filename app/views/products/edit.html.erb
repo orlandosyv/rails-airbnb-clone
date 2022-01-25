@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <h1>Editar producto</h1>
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.input :name, label: "Nombre" %>
+    <%= f.input :description, label: "Descripcion" %>
+    <%= f.input :category, label: "Categoria", collection: Product::CATEGORIES, error: "Tienes que seleccionar una categoria" %>
+    <%= f.input :price, label: "Precio" %>
+    <%= f.input :stock, label: "Cantidad" %>
+    <%= f.submit value: "Editar producto", class: "btn btn-dark" %>
+  <% end %>
+</div>
