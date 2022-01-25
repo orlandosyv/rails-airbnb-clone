@@ -6,9 +6,18 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
   end
 
   def create
+    @product = Product.new(product_params)
+    @product.user = current_user
+
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,5 +27,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :description, :category, :price, :stock)
   end
 end

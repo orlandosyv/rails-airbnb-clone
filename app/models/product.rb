@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   has_many :orders
   belongs_to :user
 
-  CATEGORIES = %w[Polos]
+  CATEGORIES = %w[Polos Poleras Camisas Jeans Vestidos Shorts Pijamas Gorros Casasacas Chompas]
 
   validates :name, presence: true, length: { minimum: 4 }
   validates :description, presence: true, length: { minimum: 10 }
