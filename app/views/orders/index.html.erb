@@ -1,1 +1,13 @@
-<h1>Tus ordenes</h1>
+<div class="container">
+  <h1>Mis compras</h1>
+  <% @orders.each do |order| %>
+    <div class="card p-3">
+      <div class="card-title">
+        <%= order.product.name %>
+      </div>
+      <div class="card-body">
+        Compra realizada el: <%= order.created_at %>
+      </div>
+    </div>
+  <% end %>
+</div>
