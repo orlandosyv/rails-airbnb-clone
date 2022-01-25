@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[edit update]
+  before_action :set_product, only: %i[edit update show]
 
   def index
     if params[:search].present?
@@ -14,7 +14,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def new
