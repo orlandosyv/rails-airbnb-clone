@@ -2,6 +2,13 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[edit update show]
 
   def index
+    if params[:search][:query].present?
+      @products = Product.where("name iLIKE ? OR category iLIKE ?", "%#{params[:search][:query]}%", "%#{params[:search][:query]}%" )
+    
+    else
+      @products = Product.all
+      
+    end  
   end
 
   def show
