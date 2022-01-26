@@ -6,7 +6,8 @@
         <%= order.product.name %>
       </div>
       <div class="card-body">
-        Compra realizada el: <%= order.created_at %>
+        <div>Compra realizada el: <%= order.created_at %></div>
+        <div><%= link_to "Dejar Review", new_order_review_path(order) %></div>
       </div>
     </div>
   <% end %>
