@@ -13,8 +13,13 @@ class OrdersController < ApplicationController
     @order.product = @product
     @order.user = current_user
     @order.reviewed = false
-    @order.save
-    redirect_to orders_path
+    if @order.save
+      redirect_to orders_path
+      @product.stock -= 1
+      @product.save
+    else
+      render :new
+    end
   end
 
   private

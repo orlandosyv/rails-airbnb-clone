@@ -13,7 +13,11 @@
   </div>
 
   <div class="text-center mt-5">
+    <% if @product.stock > 0 %>
     <%= link_to "Comprar", new_product_order_path(@product), class:"btn btn-flat" %>
+    <% else %>
+    <%= link_to "Fuera de stock", "#", class:"btn btn-flat disabled" %>
+    <% end %>
   </div>
 <div>
 
