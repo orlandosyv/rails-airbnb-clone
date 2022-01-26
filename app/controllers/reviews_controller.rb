@@ -10,6 +10,8 @@ class ReviewsController < ApplicationController
     @review.product = @order.product
 
     if @review.save
+      @order.reviewed = true
+      @order.save
       redirect_to product_path(@review.product)
     else
       render :new

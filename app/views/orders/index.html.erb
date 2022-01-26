@@ -1,13 +1,19 @@
-<div class="container">
+<div class="container mt-3">
   <h1>Mis compras</h1>
   <% @orders.each do |order| %>
-    <div class="card p-3">
+    <div class="card p-3 mb-3">
       <div class="card-title">
         <%= order.product.name %>
       </div>
       <div class="card-body">
         <div>Fecha de compra: <%= order.created_at.localtime.strftime("%d/%m/%Y %I:%M %p") %></div>
-        <div><%= link_to "Dejar Review", new_order_review_path(order) %></div>
+        <div>Direccion de envio: <%= order.address %></div>
+        <div>Metodo de pago: <%= order.pay_method %></div>
+        <% if order.reviewed %>
+          <div class="font-weight-bold">Review completo</div>
+        <% else %>
+          <div><%= link_to "Dejar Review", new_order_review_path(order) %></div>
+        <% end %>
       </div>
     </div>
   <% end %>
