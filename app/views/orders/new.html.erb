@@ -1,6 +1,8 @@
 <div class="container mt-3">
-  <h1>Añadir producto a orden</h1>
-  <%= simple_form_for[@product @order] do |f| %>
-    <%= f.input  %>
+  <h1>Formulario de compra</h1>
+  <%= simple_form_for [@product, @order] do |f| %>
+    <%= f.input :address, label: "Dirección" %>
+    <%= f.input :pay_method, collection: Order::PAY_METHOD, label: "Método de pago" %>
+    <%= f.submit %>
   <% end %>
 </div>

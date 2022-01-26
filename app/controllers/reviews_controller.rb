@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action set_order, only: %i[new create]
+  before_action :set_order, only: %i[new create]
 
   def new
     @review = Review.new
