@@ -6,7 +6,7 @@
         <%= order.product.name %>
       </div>
       <div class="card-body">
-        <div>Compra realizada el: <%= order.created_at %></div>
+        <div>Fecha de compra: <%= order.created_at.localtime.strftime("%d/%m/%Y %I:%M %p") %></div>
         <div><%= link_to "Dejar Review", new_order_review_path(order) %></div>
       </div>
     </div>

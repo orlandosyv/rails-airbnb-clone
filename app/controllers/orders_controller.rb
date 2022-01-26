@@ -15,10 +15,4 @@ class OrdersController < ApplicationController
     @order.save
     redirect_to orders_path
   end
-
-  private
-
-  # def order_params
-  #   params.require(:order).permit(:user_id, :product_id)
-  # end
 end
