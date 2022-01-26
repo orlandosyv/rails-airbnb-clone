@@ -1,6 +1,6 @@
 <div class="container mt-5">
-  <div class="card-trip">
-    <img src="" />
+  <div class="card-trip" >
+    <%= cl_image_tag @product.photo.key, alt: "", class: "card-img-top" %> 
     <div class="card-trip-infos">
       <div>
         <h2><%= @product.description %></h2>
