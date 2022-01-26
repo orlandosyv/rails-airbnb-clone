@@ -9,5 +9,4 @@ class Order < ApplicationRecord
   validates :product_id, presence: true
   validates :pay_method, presence: true, inclusion: { in: PAY_METHOD, message: "Categoria invalida" }
   validates :address, presence: true, length: { minimum: 10 }
-  validates :reviewed, presence: true
 end
