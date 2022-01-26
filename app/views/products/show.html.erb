@@ -10,20 +10,22 @@
       <h2 class="card-trip-pricing"><%= @product.price %></h2>
     </div>
   </div>
+
   <div class="text-center mt-5">
     <%= link_to "Comprar", new_product_order_path(@product), class:"btn btn-flat" %>
   </div>
-  <div>
-  <h2>Reviews</h2>
-    <% if @product.reviews.present? %>
-      <% @product.reviews.each do |review| %>
-        <div class="card mb-3">
-         <div class="card-title"><%= review.content %></div>
-         <div class="car-body">Rating: <%= review.rating %></div>
-        </div>
-      <% end %>
-      <% else %>
-        <p>No hay reviews disponibles</p>
+<div>
+
+<div class="container py-5 px-0">
+  <h3>Reviews</h3>
+  <% if @product.reviews.present? %>
+    <% @product.reviews.each do |review| %>
+      <div class="card p-3">
+        <div class="card-title"><%= review.content %></div>
+        <div class="car-body">Rating: <%= review.rating %></div>
+      </div>
     <% end %>
-  </div>
-</div>
+  <% else %>
+    <p>No hay reviews disponibles</p>
+  <% end %>
+
