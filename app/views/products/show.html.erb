@@ -1,9 +1,29 @@
-<%= link_to "Back to category", products_path %>
-
-<ul>
-  <li><%= @product.name %></li>
-  <li><%= @product.description %></li>
-  <li><%= @product.category %></li>
-  <li><%= @product.price %></li>
-  <li><%= @product.stock %></li>
-</ul>
+<div class="container mt-5">
+  <div class="card-trip">
+    <img src="" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @product.description %></h2>
+        <p><%= @product.category %></p>
+        <p><%= @product.stock %></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= @product.price %></h2>
+    </div>
+  </div>
+  <div class="text-center mt-5">
+    <%= link_to "Comprar", product_orders_path(@product), method: "post", class:"btn btn-flat" %>
+  </div>
+  <div>
+  <h2>Reviews</h2>
+    <% if @product.reviews.present? %>
+      <% @product.reviews.each do |review| %>
+        <div class="card mb-3">
+         <div class="card-title"><%= review.content %></div>
+         <div class="car-body">Rating: <%= review.rating %></div>
+        </div>
+      <% end %>
+      <% else %>
+        <p>No hay reviews disponibles</p>
+    <% end %>
+  </div>
+</div>
