@@ -1,4 +1,3 @@
-
 <div class="container mt-5">
   <div class="card-trip">
     <img src="" />
@@ -13,5 +12,18 @@
   </div>
   <div class="text-center mt-5">
     <%= link_to "Comprar", product_orders_path(@product), method: "post", class:"btn btn-flat" %>
+  </div>
+  <div>
+  <h2>Reviews</h2>
+    <% if @product.reviews.present? %>
+      <% @product.reviews.each do |review| %>
+        <div class="card mb-3">
+         <div class="card-title"><%= review.content %></div>
+         <div class="car-body">Rating: <%= review.rating %></div>
+        </div>
+      <% end %>
+      <% else %>
+        <p>No hay reviews disponibles</p>
+    <% end %>
   </div>
 </div>
