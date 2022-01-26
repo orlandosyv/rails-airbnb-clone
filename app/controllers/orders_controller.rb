@@ -9,10 +9,17 @@ class OrdersController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    @order = Order.new
+    @order = Order.new(order_params)
     @order.product = @product
     @order.user = current_user
+    @order.reviewed = false
     @order.save
     redirect_to orders_path
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:address, :pay_method)
   end
 end

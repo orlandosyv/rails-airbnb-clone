@@ -1,6 +1,6 @@
 <div class="container mt-3">
   <h1>Formulario de compra</h1>
-  <%= simple_form_for [@product, @order] do |f| %>
+  <%= simple_form_for [@product, @order], url: product_orders_path do |f| %>
     <%= f.input :address, label: "Dirección" %>
     <%= f.input :pay_method, collection: Order::PAY_METHOD, label: "Método de pago" %>
     <%= f.submit %>
