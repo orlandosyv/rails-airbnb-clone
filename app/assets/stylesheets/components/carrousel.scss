@@ -31,3 +31,32 @@
 .carousel-inner .carousel-item-left{
   transform: translateX(0);
 }
+.img-fluid {
+  height: 300px;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  opacity: 0.9;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+.img-fluid:hover{
+  opacity: 1;
+}
+.card-body{
+  border: none;
+  background-color: #F4F4F4;
+}

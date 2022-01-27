@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
-const recipe = () => {
-$('#recipeCarousel').carousel({
+const recipe2 = () => {
+$('#recipeCarousel2').carousel({
   interval: 5000
 })
 
@@ -24,4 +24,4 @@ $('.carousel .carousel-item').each(function(){
 });
 };
 
-export {recipe};
+export {recipe2};
