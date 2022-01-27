@@ -77,3 +77,49 @@
     opacity: 1;
   }
 }
+// index de order
+
+.card-product {
+  overflow: hidden;
+  height: 180px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 510px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 180px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding-left: 16px;
+  height: 100%;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+#review-item{
+  align-self:flex-end;
+}
+.container-cards{
+  display: flex;
+  justify-content: space-between;
+}
