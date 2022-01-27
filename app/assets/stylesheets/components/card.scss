@@ -3,29 +3,6 @@
   grid-gap: 56px;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  opacity: 0.9;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-}
-.card-category:hover{
-  opacity: 1;
-}
 .card-trip {
   overflow: hidden;
   background: white;
