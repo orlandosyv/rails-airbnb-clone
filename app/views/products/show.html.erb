@@ -1,9 +1,10 @@
 <div class="container mt-5">
-  <div class="card-trip">
-    <img src="" />
+  <div class="card-trip" >
+    <%= cl_image_tag @product.photo.key, alt: "", class: "card-img-top" %>
     <div class="card-trip-infos">
       <div>
-        <h2><%= @product.description %></h2>
+        <h2><%= @product.name %></h2>
+        <p><%= @product.description %></p>
         <p><%= @product.category %></p>
         <p><%= @product.stock %></p>
       </div>
@@ -12,7 +13,11 @@
   </div>
 
   <div class="text-center mt-5">
+    <% if @product.stock > 0 %>
     <%= link_to "Comprar", new_product_order_path(@product), class:"btn btn-flat" %>
+    <% else %>
+    <%= link_to "Fuera de stock", "#", class:"btn btn-flat disabled" %>
+    <% end %>
   </div>
 <div>
 
@@ -28,4 +33,3 @@
   <% else %>
     <p>No hay reviews disponibles</p>
   <% end %>
-
