@@ -1,8 +1,10 @@
-<div class="container mt-3">
-  <h1>Formulario de compra</h1>
-  <%= simple_form_for [@product, @order], url: product_orders_path do |f| %>
-    <%= f.input :address, label: "Dirección" %>
-    <%= f.input :pay_method, collection: Order::PAY_METHOD, label: "Método de pago" %>
-    <%= f.submit %>
-  <% end %>
+<div class="container py-5 px-0">
+  <div class="container bg-white p-5 w-50 rounded">
+    <h1>Formulario de compra</h1>
+    <%= simple_form_for [@product, @order], url: product_orders_path do |f| %>
+      <%= f.input :address, label: "Dirección" %>
+      <%= f.input :pay_method, collection: Order::PAY_METHOD, label: "Método de pago" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
