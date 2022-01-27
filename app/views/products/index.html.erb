@@ -14,8 +14,8 @@
                 </a>
               </div>
               <div class="card-body">
-                <h4 class="card-title"><%= product.name %></h4>
-                <p class="card-text text-muted"><%= product.description %></p>
+                <h4 class="card-title"><%= product.name.capitalize %></h4>
+                <p class="card-text text-muted"><%= product.description.capitalize %></p>
                 <div class="buy d-flex justify-content-between align-items-center">
                   <h5 class="stock text-muted">Stock: <%= product.stock %></h5>
                   <h5 class="text-success font-weight-bold">$<%= product.price%></h5>
