@@ -34,8 +34,11 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.update(product_params)
-    redirect_to product_path(@product)
+    if @product.update(product_params)
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
   end
 
   private

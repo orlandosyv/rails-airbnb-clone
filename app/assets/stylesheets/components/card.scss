@@ -65,3 +65,40 @@
   top: -20px;
   width: 40px;
 }
+
+.card {
+  max-width: 340px;
+  border-radius: 6px;
+
+  h5 {
+    margin: 0;
+  }
+
+  img {
+    padding: 20px 20px 0px 20px;
+    height: 230px;
+  }
+
+  .reviews {
+    position: absolute;
+    bottom: -10px;
+  }
+
+  .buy {
+    transition: 0.4s;
+  }
+
+  .fa-star, .fa-star-half-alt, small {
+    transition: 0.4s;
+    opacity: 0;
+  }
+
+  &:hover .buy {
+    padding-bottom: 25px;
+  }
+
+  &:hover .fa-star, &:hover .fa-star-half-alt, &:hover small {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}

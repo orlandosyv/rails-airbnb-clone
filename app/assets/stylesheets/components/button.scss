@@ -10,3 +10,22 @@
   background: #1BCB7F;
   color: white;
 }
+
+
+
+.fa-heart {
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.btn-like {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+}
+
+.btn-like:hover .fa-heart {
+  background-color: rgba(255, 255, 255, 0.884);
+}
