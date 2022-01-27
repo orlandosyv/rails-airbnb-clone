@@ -43,9 +43,55 @@
   width: 40px;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 .card {
   max-width: 340px;
   border-radius: 6px;
+  transition: 0.4s;
+
+  .card-body {
+    background-color: white;
+  }
 
   h5 {
     margin: 0;
@@ -62,7 +108,9 @@
   }
 
   .buy {
+    width: 100%;
     transition: 0.4s;
+    padding-bottom: 25px;
   }
 
   .fa-star, .fa-star-half-alt, small {
@@ -70,12 +118,17 @@
     opacity: 0;
   }
 
-  &:hover .buy {
-    padding-bottom: 25px;
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &:hover .card-img-overlay {
+    background: #48484809;
   }
 
   &:hover .fa-star, &:hover .fa-star-half-alt, &:hover small {
     transform: translateY(-10px);
     opacity: 1;
   }
+
 }
