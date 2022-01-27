@@ -13,6 +13,8 @@
           <div class="font-weight-bold">Review completo</div>
         <% else %>
           <div><%= link_to "Dejar Review", new_order_review_path(order) %></div>
+          <%# terminos y condiciones  %>
+          <div><%= link_to "Cambios y/o Devoluciones?", refund_path %></div>
         <% end %>
       </div>
     </div>
