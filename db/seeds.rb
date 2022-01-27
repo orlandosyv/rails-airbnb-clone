@@ -15,6 +15,8 @@ require 'faker'
 CATEGORIES = %w[Polos Camisas Jeans Vestidos Pijamas Casacas Chompas]
 
 puts "Cleaning database..."
+Order.destroy_all
+Review.destroy_all
 Product.destroy_all
 
 puts 'creating products'
