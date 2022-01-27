@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   # en show: Product.photo (@product.photo)
   # <%= cl_image_tag @product.photo.key, alt: "Logo", style:"height:80px", class:"" %>
 
-  CATEGORIES = %w[Polos Poleras Camisas Jeans Vestidos Shorts Pijamas Gorros Casasacas Chompas]
+  CATEGORIES = %w[Polos Poleras Camisas Jeans Vestidos Shorts Pijamas Gorros Casacas Chompas]
 
   validates :name, presence: true, length: { minimum: 4 }
   validates :description, presence: true, length: { minimum: 10 }
