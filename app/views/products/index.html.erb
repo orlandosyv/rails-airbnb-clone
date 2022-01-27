@@ -19,6 +19,8 @@
                 <h5 class="stock text-muted">Stock: <%= product.stock %></h5>
                 <h5 class="text-success font-weight-bold">$<%= product.price%></h5>
               </div>
+
+
               <div class="buy d-flex align-items-center mt-2 pb-3 reviews">
                 <i class="fas fa-star text-warning"></i>
                 <i class="fas fa-star text-warning"></i>
@@ -26,6 +28,7 @@
                 <i class="fas fa-star text-warning"></i>
                 <i class="fas fa-star-half-alt text-warning"></i>
                 <small class="ml-2 text-muted">(<%= product.reviews.count %>)</small>
+
               </div>
             </div>
             <%= link_to "", product_path(product), class: "stretched-link" %>
