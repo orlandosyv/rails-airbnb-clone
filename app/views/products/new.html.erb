@@ -1,11 +1,17 @@
-<div class="container p-4 mt-3">
-  <h1>Añadir producto</h1>
-  <%= simple_form_for(@product) do |f| %>
-    <%= f.input :name, label: "Nombre" %>
-    <%= f.input :description, label: "Descripcion" %>
-    <%= f.input :category, label: "Categoria", collection: Product::CATEGORIES, error: "Tienes que seleccionar una categoria" %>
-    <%= f.input :price, label: "Precio" %>
-    <%= f.input :stock, label: "Cantidad" %>
-    <%= f.submit value: "Añadir producto", class: "btn btn-dark" %>
-  <% end %>
+<div class="container py-5 px-0">
+
+  <div class="container">
+    
+    <div class="container bg-white p-5 w-50 rounded">
+      <h2> <strong> Añadir producto </strong> </h2>
+      <%= simple_form_for(@product) do |f| %>
+        <%= f.input :name, label: "Nombre" %>
+        <%= f.input :description, label: "Descripcion" %>
+        <%= f.input :category, label: "Categoria", collection: Product::CATEGORIES, error: "Tienes que seleccionar una categoria" %>
+        <%= f.input :price, label: "Precio" %>
+        <%= f.input :stock, label: "Cantidad" %>
+        <%= f.submit value: "Añadir producto", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
 </div>
