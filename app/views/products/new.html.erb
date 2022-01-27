@@ -10,6 +10,7 @@
         <%= f.input :category, label: "Categoria", collection: Product::CATEGORIES, error: "Tienes que seleccionar una categoria" %>
         <%= f.input :price, label: "Precio" %>
         <%= f.input :stock, label: "Cantidad" %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit value: "Añadir producto", class: "btn btn-dark" %>
       <% end %>
     </div>
