@@ -7,6 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import {recipe} from '../plugins/carousel.js'
+import {recipe2} from '../plugins/carousel2.js'
 
 Rails.start()
 Turbolinks.start()
@@ -20,6 +22,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import { Carousel } from "bootstrap"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -27,4 +30,6 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  recipe();
+  recipe2();
 });
