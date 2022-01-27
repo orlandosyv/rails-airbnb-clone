@@ -1,7 +1,10 @@
 .product-show {
-  height: 500px;
+  height: 100%;
   // width: 800px;
- object-fit: cover;
+  object-fit: cover;
   background-position: cover;
+}
 
+.product-size {
+  height: auto;
 }
