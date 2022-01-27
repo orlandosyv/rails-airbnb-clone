@@ -117,8 +117,8 @@ CLOTHES = [
 ]
 
 puts "Cleaning database..."
-Review.destroy_all
 Order.destroy_all
+Review.destroy_all
 Product.destroy_all
 
 puts 'creating products'
