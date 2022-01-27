@@ -1,6 +1,6 @@
 <div class="container py-5">
 
-  <h2> <strong class="text-secondary"> Productos </strong> </h2>
+  <h2> <strong class="text-secondary">Tus productos publicados </strong> </h2>
   <div class='container d-flex flex-wrap p-0'>
     <% @products.each do |product| %>
       <div class='card p-4 mr-4 mb-4 col-3' >
@@ -9,7 +9,8 @@
         <h6>Price: <%= product.price %>  </h6>
         <div class="container d-flex justify-content-between p-0 align-items-center">
           <h6>Stock: <%= product.stock %>  </h6>
-          <h6><%= link_to 'Show', product_path(product) %></h6>
+          <h6><%= link_to 'edit', edit_product_path(product) %></h6>
+          <h6><%= link_to 'delete', product_path(product), method: 'delete' %></h6>
         </div>
       </div>
     <% end %>
