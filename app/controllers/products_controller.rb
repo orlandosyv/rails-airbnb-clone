@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
       if params[:search][:query].empty?
         @products = Product.all
       else
-        @products = Product.where("name iLIKE ? OR category iLIKE ?", "%#{params[:search][:query]}%", "%#{params[:search][:query]}%" )
+        @products = Product.where("name iLIKE ? OR category iLIKE ? OR description iLIKE ?", "%#{params[:search][:query]}%", "%#{params[:search][:query]}%", "%#{params[:search][:query]}%" )
       end
     end
   end
