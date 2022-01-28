@@ -1,11 +1,21 @@
-<div class="container mt-3">
-  <h1>Editar producto</h1>
-  <%= simple_form_for(@product) do |f| %>
-    <%= f.input :name, label: "Nombre" %>
-    <%= f.input :description, label: "Descripcion" %>
-    <%= f.input :category, label: "Categoria", collection: Product::CATEGORIES, error: "Tienes que seleccionar una categoria" %>
-    <%= f.input :price, label: "Precio" %>
-    <%= f.input :stock, label: "Cantidad" %>
-    <%= f.submit value: "Editar producto", class: "btn btn-dark" %>
-  <% end %>
+<div class="container py-5 px-0">
+
+  <div class="container">
+
+    <div class="container bg-white p-5 w-75 rounded">
+      <h2> <strong>Editar producto </strong> </h2>
+      <%= simple_form_for(@product) do |f| %>
+        <%= f.input :name, label: "Nombre" %>
+        <%= f.input :description, label: "Descripcion" %>
+        <%= f.input :category, label: "Categoria", collection: Product::CATEGORIES, error: "Tienes que seleccionar una categoria" %>
+        <%= f.input :price, label: "Precio en Nuevos Soles S/." %>
+        <%= f.input :stock, label: "Cantidad" %>
+        <%= f.input :photo, as: :file, label: "Fotografia" %>
+        <div class="d-flex justify-content-center ">
+          <%= f.submit value: "Editar producto", class: "btn btn-dark mt-5 btn-lg" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
 </div>
