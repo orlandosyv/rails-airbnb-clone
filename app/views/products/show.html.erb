@@ -53,14 +53,14 @@
   <div class="container">
     <h3>Reviews</h3>
     <% if @product.reviews.present? %>
-      <% @product.reviews.each do |review| %>
-        
+      <% x = 1 %>
+      <% @product.reviews.each do |review| %>          
           <div class="bg-white p-4 border">
-            <h6> <strong> UserName </strong> </h6>
-            <div class="card-title m-0"><%= review.content %></div>
-            <div class="car-body">Rating: <%= review.rating %></div>
+            <h6> <strong> Usuario <%= x %> </strong> </h6>
+            <div class="card-title m-0"> <em>"<%= review.content %>"</em> </div>
+            <div>Rating: <%= review.rating %></div>
           </div>
-       
+          <% x += 1 %> 
       <% end %>
     <% else %>
       <p>No hay reviews disponibles</p>

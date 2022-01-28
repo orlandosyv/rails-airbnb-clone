@@ -14,7 +14,7 @@
               <div class="img-container"><%= image_tag (cl_image_path product.photo.key), class: "card-img" %></div>
               <div class="card-info">
                 <small class="details text-muted">Por <%= product.user.nickname %></small>
-                <h4 class="card-title"><%= product.name.length > 23 ? "#{product.name[0..23]}..." : product.name %></h4>
+                <h4 class="card-title"><%= product.name.length > 23 ? "#{product.name[0..23].capitalize}..." : product.name.capitalize %></h4>
                 <p class="card-text text-muted"><%= product.description.length > 50 ? "#{product.description[0..50]}..." : product.description %></p>
               </div>
               <div class="buy d-flex justify-content-between align-items-center">
