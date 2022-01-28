@@ -1,62 +1,68 @@
-
-  <div class="container p-0 my-5 mx-5 d-flex justify-content-between bg-white row" >
-    <div class="container p-0 col-md-8">
-      <%= cl_image_tag @product.photo.key, alt: "", class: "card-img-top product-show" %>
-    </div>
-
-    <div class="container p-5 col-md-4">
-      <div>
-        <p class="badge badge-info justify-content-end"> <small><%= @product.category %> </small></p>
-        <h3> <strong> <%= @product.name %> </strong> </h3>
-        <p class="text-secondary"><%= @product.description %></p>
-        <p class="text-secondary m-0">Stock: <%= @product.stock %></p>
-        <p class="text-secondary m-0">Color: <%= "White" %></p>
+  <div class="container">
+    <div class="p-0 my-5 d-flex justify-content-between bg-white row product-size" >
+      <div class="container p-0 col-md-8">
+        <%= cl_image_tag @product.photo.key, alt: "", class: "card-img-top product-show" %>
       </div>
-      <h2 class="card-trip-pricing py-4 m-0"> <strong> S/. <%= @product.price %> </strong></h2>
 
-
-      <form class="pt-4">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <select id="inputState" class="form-control">
-              <option selected>Talla</option>
-              <option>XS</option>
-              <option>S</option>
-              <option>M</option>
-              <option>L</option>
-              <option>XL</option>
-            </select>
-          </div>
-
-          <div class="form-group col-md-6">
-            <select id="inputState" class="form-control">
-              <option selected>Escoge</option>
-              <option>...</option>
-            </select>
-          </div>
-          
-          <div class="form-group col-md-12 text-center">
-            <% if @product.stock > 0 %>
-            <%= link_to "Comprar", new_product_order_path(@product), class:"btn btn-flat" %>
-            <% else %>
-            <%= link_to "Fuera de stock", "#", class:"btn btn-flat disabled" %>
-            <% end %>
-          </div>
+      <div class="container p-5 col-md-4">
+        <div>
+          <p class="badge badge-info justify-content-end"> <small><%= @product.category %> </small></p>
+          <h3> <strong> <%= @product.name %> </strong> </h3>
+          <p class="text-secondary"><%= @product.description %></p>
+          <p class="text-secondary m-0">Stock: <%= @product.stock %></p>
+          <p class="text-secondary m-0">Color: <%= "White" %></p>
         </div>
-      </form>
+        <h2 class="card-trip-pricing py-4 m-0"> <strong> S/. <%= @product.price %> </strong></h2>
 
+
+        <form class="pt-4">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <select id="inputState" class="form-control">
+                <option selected>Talla</option>
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6">
+              <select id="inputState" class="form-control">
+                <option selected>Escoge</option>
+                <option>...</option>
+              </select>
+            </div>
+            
+            <div class="form-group col-md-12 text-center">
+              <% if @product.stock > 0 %>
+              <%= link_to "Comprar", new_product_order_path(@product), class:"btn btn-flat" %>
+              <% else %>
+              <%= link_to "Fuera de stock", "#", class:"btn btn-flat disabled" %>
+              <% end %>
+            </div>
+          </div>
+        </form>
+
+      </div>
     </div>
   </div>
 
-<div class="container py-5 px-0">
-  <h3>Reviews</h3>
-  <% if @product.reviews.present? %>
-    <% @product.reviews.each do |review| %>
-      <div class="card p-3">
-        <div class="card-title"><%= review.content %></div>
-        <div class="car-body">Rating: <%= review.rating %></div>
-      </div>
+  
+  <div class="container">
+    <h3>Reviews</h3>
+    <% if @product.reviews.present? %>
+      <% @product.reviews.each do |review| %>
+        
+          <div class="bg-white p-4 border">
+            <h6> <strong> UserName </strong> </h6>
+            <div class="card-title m-0"><%= review.content %></div>
+            <div class="car-body">Rating: <%= review.rating %></div>
+          </div>
+       
+      <% end %>
+    <% else %>
+      <p>No hay reviews disponibles</p>
     <% end %>
-  <% else %>
-    <p>No hay reviews disponibles</p>
-  <% end %>
+  </div>

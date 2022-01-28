@@ -7,7 +7,6 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
-
   def create
     @product = Product.find(params[:product_id])
     @order = Order.new(order_params)
@@ -15,7 +14,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.reviewed = false
     if @order.save
-      redirect_to orders_path
+      redirect_to orders_path, notice: "Compra realizada con exito"
       @product.stock -= 1
       @product.save
     else

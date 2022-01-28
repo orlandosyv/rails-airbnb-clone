@@ -5,9 +5,28 @@ class ProductsController < ApplicationController
   def index
     if params[:search].present?
       if params[:search][:query].empty?
-        @products = Product.all
+        @products = user_signed_in? ? Product.all.where("user_id != ?", current_user.id.to_s) : Product.all
       else
-        @products = Product.where("name iLIKE ? OR category iLIKE ? OR description iLIKE ?", "%#{params[:search][:query]}%", "%#{params[:search][:query]}%", "%#{params[:search][:query]}%" )
+        sql_query_user = " \
+          name iLIKE :query AND user_id <> :user_id \
+          OR category iLIKE :query AND user_id <> :user_id \
+          OR description iLIKE :query AND user_id <> :user_id \
+        "
+
+        sql_query_visitor = " \
+          name iLIKE :query \
+          OR category iLIKE :query \
+          OR description iLIKE :query \
+        "
+        if user_signed_in?
+          sql_query = sql_query_user
+          id = current_user.id.to_s
+        else
+          sql_query = sql_query_visitor
+          id = ""
+        end
+
+        @products = Product.where(sql_query, query: "%#{params[:search][:query]}%", user_id: id)
       end
     end
   end

@@ -6,10 +6,16 @@ class PagesController < ApplicationController
 
   def myproducts
     @products = Product.where(user_id: current_user.id)
+    @orders = []
+    @products.each do |product|
+      if product.orders.present?
+        @orders += product.orders
+      end
+    end
   end
 
   def terms
-  end 
+  end
 
   def refund
   end

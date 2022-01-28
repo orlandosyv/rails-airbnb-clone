@@ -1,38 +1,46 @@
 <div class="container py-5">
 
-<h2><strong class="text-secondary"> Productos </strong></h2>
+  <h2><strong class="text-secondary"> Productos </strong></h2>
   <%# <div class="col-12 col-sm-8 col-md-6 col-lg-4"> %>
-    <% @products.each_slice(3) do |groups_products| %>
-      <div class="card-group">
-        <% groups_products.each do |product| %>
-          <div class="card shadow m-3">
-            <div class="content">
-              <%= image_tag (cl_image_path product.photo.key), class: "card-img" %>
-              <div class="card-img-overlay d-flex justify-content-end">
-                <a href="#" class="card-link btn-like">
-                  <i class="far fa-heart text-primary"></i>
-                </a>
+  <div class="cards">
+    <% @products.each do |product| %>
+          <div class="card card-product border-0">
+            <div class="card-img-overlay d-flex justify-content-end">
+              <a href="#" class="card-link btn-like">
+                <i class="far fa-heart text-primary"></i>
+              </a>
+            </div>
+            <div class="card-body">
+              <div class="img-container"><%= image_tag (cl_image_path product.photo.key), class: "card-img" %></div>
+              <div class="card-info">
+                <small class="details text-muted">Por <%= product.user.nickname %></small>
+                <h4 class="card-title"><%= product.name.length > 23 ? "#{product.name[0..23]}..." : product.name %></h4>
+                <p class="card-text text-muted"><%= product.description.length > 50 ? "#{product.description[0..50]}..." : product.description %></p>
               </div>
-              <div class="card-body">
-                <h4 class="card-title"><%= product.name %></h4>
-                <p class="card-text text-muted"><%= product.description %></p>
-                <div class="buy d-flex justify-content-between align-items-center">
-                  <h5 class="stock text-muted">Stock: <%= product.stock %></h5>
-                  <h5 class="text-success font-weight-bold">$<%= product.price%></h5>
-                </div>
+              <div class="buy d-flex justify-content-between align-items-center">
+                <h6 class="stock text-muted m-0">Stock: <%= product.stock %></h6>
+                <h5 class="font-weight-bold">S/. <%= product.price%></h5>
+              </div>
+
+              <%# No deberia de haber mucha logica aqui pero ya viene la presentacion %>
+
+              <div class="buy d-flex align-items-center mt-2 pb-3 reviews">
+                <% avg_rating = Review.where(product_id: product.id).average(:rating) || 0 %>
+                <% (1..5).each_with_index do |number| %>
+                  <% if avg_rating >= number %>
+                    <i class="fas fa-star text-warning"></i>
+                  <% elsif (number - avg_rating) < 1 %>
+                    <i class="fas fa-star-half-alt text-warning"></i>
+                  <% else %>
+                    <i class="far fa-star text-warning"></i>
+                  <% end %>
+                <% end %>
+                <small class="ml-2 text-muted rating">(<%= avg_rating %>)</small>
               </div>
             </div>
-            <div class="buy d-flex align-items-center mt-2 pl-3 pr-3 pb-3 reviews">
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star text-warning"></i>
-              <i class="fas fa-star-half-alt text-warning"></i>
-              <small class="ml-2 text-muted">(<%= product.reviews.count %>)</small>
-            </div>
+            <%= link_to "", product_path(product), class: "stretched-link" %>
           </div>
-        <% end %>
-      </div>
     <% end %>
+  </div>
   <%# </div> %>
 </div>
