@@ -1,16 +1,31 @@
 <div class="container py-5">
 
   <h2> <strong class="text-secondary">Tus productos publicados </strong> </h2>
-  <div class='container d-flex flex-wrap p-0'>
+  <div class='cards'>
     <% @products.each do |product| %>
-      <div class='card p-4 mr-4 mb-4 col-3' >
+      <div class='card' >
         <h5> <strong> <%= product.name %> </strong> </h5>
         <h6> <%= product.description %>  </h6>
         <h6>Price: <%= product.price %>  </h6>
         <div class="container d-flex justify-content-between p-0 align-items-center">
           <h6>Stock: <%= product.stock %>  </h6>
-          <h6><%= link_to 'edit', edit_product_path(product) %></h6>
-          <h6><%= link_to 'delete', product_path(product), method: 'delete' %></h6>
+          <h6><%= link_to 'Editar', edit_product_path(product) %></h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <h2> <strong class="text-secondary">Productos vendidos </strong></h2>
+  <div class="cards">
+    <% @orders.each do |order| %>
+      <div class="card">
+        <div class="card-title m-0">
+          <h5>Producto: <%= order.product.name.capitalize %></h5>
+        </div>
+        <div class="card-body p-0 pt-2">
+          <div>Comprador: <%= order.user.nickname %></div>
+          <div>Fecha de compra: <%= order.created_at.localtime.strftime("%d/%m/%Y %I:%M %p") %></div>
+          <div>Direccion de envio: <%= order.address %></div>
+          <div>Metodo de pago: <%= order.pay_method %></div>
         </div>
       </div>
     <% end %>
