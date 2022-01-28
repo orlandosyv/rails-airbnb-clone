@@ -113,7 +113,7 @@ CLOTHES = [
   'long pink mantle',
   'gray dress',
   'green/orange paisley jumper',
-  'yoga overcoat',    
+  'yoga overcoat',
 ]
 
 puts "Cleaning database..."

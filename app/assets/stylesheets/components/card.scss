@@ -41,10 +41,11 @@
   width: 40px;
 }
 
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 10px;
 }
 
 // Smallest device
@@ -52,12 +53,20 @@
   .cards {
     grid-template-columns: 1fr;
   }
+
+  .card-product {
+    margin: 0 auto;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .card-product {
+    margin: 0 auto;
   }
 }
 
@@ -82,13 +91,25 @@
   }
 }
 
-.card {
-  max-width: 340px;
+.card-product {
+  max-width: 300px;
   border-radius: 6px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   transition: 0.4s;
 
   .card-body {
     background-color: white;
+    padding: 0.9rem;
+  }
+
+  .details {
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
   h5 {
@@ -96,8 +117,20 @@
   }
 
   img {
-    padding: 20px 20px 0px 20px;
-    height: 230px;
+    // padding: 20px 20px 0px 20px;
+    height: 200px;
+    transition: 0.4s ease;
+    // border-radius: 5px;
+  }
+
+  .img-container {
+    overflow: hidden;
+    border-radius: 5px;
+    // margin-bottom: 20px;
+  }
+
+  &:hover img{
+    transform: scale(1.15);
   }
 
   .reviews {
@@ -108,24 +141,21 @@
   .buy {
     width: 100%;
     transition: 0.4s;
-    padding-bottom: 25px;
+    padding-bottom: 17px;
   }
 
-  .fa-star, .fa-star-half-alt, small {
+  .card-info {
+    min-height: 111px;
+    margin-bottom: 5px;
+  }
+
+  .fa-star, .fa-star-half-alt, .rating {
     transition: 0.4s;
     opacity: 0;
   }
 
-  &:hover {
-    transform: translateY(-4px);
-  }
-
-  &:hover .card-img-overlay {
-    background: #48484809;
-  }
-
-  &:hover .fa-star, &:hover .fa-star-half-alt, &:hover small {
-    transform: translateY(-10px);
+  &:hover .fa-star, &:hover .fa-star-half-alt, &:hover .rating {
+    transform: translateY(-7px);
     opacity: 1;
   }
 

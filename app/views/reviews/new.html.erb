@@ -2,7 +2,7 @@
   <h1>Nuevo review</h1>
 
   <%= simple_form_for [@order, @review] do |f| %>
-    <%= f.input :content %>
+    <%= f.input :content, label: "Comentario" %>
     <%= f.input :rating %>
     <%= f.submit %>
   <% end %>

@@ -2,14 +2,16 @@
   <div class="text-center mb-5" >
     <h3 class="text-secondary"> <strong> Mis compras </strong> </h3>
   </div>
-  
-  
+
+  <%= render 'shared/flashes' %>
+
   <% @orders.each do |order| %>
-  <div class="card p-3 mb-4">
+    <div class="card p-3 mb-4">
       <div class="card-title m-0">
-        <h5>Producto: <%= order.product.name.capitalize %></h5>        
+        <h5>Producto: <%= order.product.name.capitalize %></h5>
       </div>
       <div class="card-body p-0 pt-2">
+        <div>Vendido por: <%= order.product.user.nickname %></div>
         <div>Fecha de compra: <%= order.created_at.localtime.strftime("%d/%m/%Y %I:%M %p") %></div>
         <div>Direccion de envio: <%= order.address %></div>
         <div>Metodo de pago: <%= order.pay_method %></div>
@@ -17,7 +19,7 @@
           <div class="font-weight-bold">Review completo</div>
         <% else %>
           <div class="mt-3" ><%= link_to "Dejar Review", new_order_review_path(order) %></div>
-          
+
         <% end %>
       </div>
     </div>
@@ -25,5 +27,3 @@
   <%# terminos y condiciones  %>
   <div class="mt-5 text-right"><%= link_to "Cambios y Devoluciones", refund_path %></div>
 </div>
-  
-
