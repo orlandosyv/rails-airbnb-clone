@@ -28,7 +28,7 @@
             aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user"></i> <%= current_user.nickname %> </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-            <a class="dropdown-item" href="#">Mi cuenta</a>
+            <%= link_to "Mi cuenta", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Mis productos", myproducts_path, class: "dropdown-item" %>
             <%= link_to "Log out",  destroy_user_session_path, method: "delete", class: "dropdown-item" %>
           </div>
