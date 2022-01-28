@@ -220,9 +220,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.text-right a{
-  font-size: 18px;
-}
 .container-selling{
   display: flex;
   justify-content: space-between;
@@ -237,4 +234,9 @@
   position: absolute;
   top: 145px;
   right: 25px;
+}
+#change{
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(87, 86, 84);
 }
