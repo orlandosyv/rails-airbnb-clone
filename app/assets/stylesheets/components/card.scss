@@ -162,7 +162,7 @@
 }
 // index de order
 
-.card-product {
+.card-products {
   overflow: hidden;
   height: 180px;
   background: white;
@@ -180,13 +180,13 @@
   object-fit: cover;
 }
 
-.card-product h2 {
+.card-products h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+.card-products p {
   font-size: 14px;
   line-height: 1.4;
   opacity: .7;
@@ -194,7 +194,7 @@
   margin-top: 8px;
   margin-right: 4px;
 }
-.card-product a {
+.card-products a {
   font-size: 14px;
   line-height: 1.4;
   margin-bottom: 0;
@@ -202,7 +202,7 @@
   margin-right: 4px;
   font-weight: bold;
 }
-.card-product .card-product-infos {
+.card-products .card-product-infos {
   padding: 16px;
   height: 100%;
   margin-top: 0;

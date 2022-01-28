@@ -6,9 +6,9 @@
 
   <%= render 'shared/flashes' %>
 
- <div class="container-cards">
+  <div class="container-cards">
     <% @orders.each do |order| %>
-    <div class="card-product">
+    <div class="card-products">
       <%= cl_image_tag order.product.photo.key, alt: "foto de producto", class: "img-order" %>
       <div class="card-product-infos w-100">
         <h2>Producto : <%= order.product.name.capitalize %></h2>
