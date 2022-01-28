@@ -87,8 +87,8 @@
   display: flex;
   align-items: center;
   width: 510px;
+  margin-bottom: 30px;
 }
-
 .img-order {
   height: 100%;
   width: 180px;
@@ -115,6 +115,7 @@
   margin-bottom: 0;
   margin-top: 8px;
   margin-right: 4px;
+  font-weight: bold;
 }
 .card-product .card-product-infos {
   padding-left: 16px;
@@ -132,4 +133,8 @@
 .container-cards{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.text-right a{
+  font-size: 18px;
 }
