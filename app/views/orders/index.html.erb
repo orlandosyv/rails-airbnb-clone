@@ -15,11 +15,18 @@
         <p>Fecha de compra: <%= order.created_at.localtime.strftime("%d/%m/%Y %I:%M %p") %></p>
         <p>Direccion de envio: <%= order.address %></p>
         <p>Metodo de pago: <%= order.pay_method %></p>
-        <% if order.reviewed %>
-          <p id="review-item" class="font-weight-bold">Review completo</p>
-        <% else %>
-          <p id="review-item2" class="badge badge-info"><%= link_to "Dejar Review", new_order_review_path(order) %></p>
-        <% end %>
+        <div class="container-selling">
+          <div>
+            <p class="selling-item">Vendido por: <%= order.user.nickname %></p>
+          </div>
+          <div>
+            <% if order.reviewed %>
+              <p id="review-item" class="font-weight-bold selling-item2">Review completo</p>
+            <% else %>
+              <p id="review-item2" class="badge badge-info selling-item2"><%= link_to "Dejar Review", new_order_review_path(order) %></p>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
     <% end %>
