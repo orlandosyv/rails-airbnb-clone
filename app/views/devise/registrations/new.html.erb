@@ -1,7 +1,7 @@
 <div class="container py-5 px-0">
 
   <div class="container">
-    
+
     <div class="container bg-white p-5 w-50 rounded">
     <h2> <strong> Registro </strong> </h2>
 
@@ -16,9 +16,11 @@
           <%= f.input :nickname %>
           <%= f.input :password,
                       required: true,
+                      label:  "Contraseña",
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
+                      label: "Confirmar contraseña",
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>
