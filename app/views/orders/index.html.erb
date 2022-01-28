@@ -14,9 +14,9 @@
         <p>Direccion de envio: <%= order.address %></p>
         <p>Metodo de pago: <%= order.pay_method %></p>
         <% if order.reviewed %>
-          <p id="review-item" class="font-weight-bold align-bottom">Review completo</p>
+          <p id="review-item" class="font-weight-bold">Review completo</p>
         <% else %>
-          <p id="review-item"><%= link_to "Dejar Review", new_order_review_path(order) %></p>
+          <p id="review-item2" class="badge badge-info"><%= link_to "Dejar Review", new_order_review_path(order) %></p>
         <% end %>
       </div>
     </div>

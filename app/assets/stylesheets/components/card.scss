@@ -88,6 +88,8 @@
   align-items: center;
   width: 510px;
   margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: rgba(0,0,0,0.2) ;
 }
 .img-order {
   height: 100%;
@@ -118,7 +120,7 @@
   font-weight: bold;
 }
 .card-product .card-product-infos {
-  padding-left: 16px;
+  padding: 16px;
   height: 100%;
   margin-top: 0;
   display: flex;
@@ -128,7 +130,16 @@
 #review-item{
   align-self:flex-end;
   position: absolute;
-  top: 150px;
+  top: 130px;
+}
+#review-item2{
+  align-self:flex-end;
+  position: absolute;
+  top: 130px;
+}
+#review-item2 a{
+  color: rgb(250, 250, 250);
+  font-weight: bold;
 }
 .container-cards{
   display: flex;
