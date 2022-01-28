@@ -123,7 +123,7 @@ Product.destroy_all
 
 puts 'creating products'
 
-12.times do
+6.times do
  a = CLOTHES.sample
  b = CATEGORIES.sample
  x = Product.create(
@@ -140,5 +140,41 @@ puts 'creating products'
   x.save!
 
 end
+
+6.times do
+  a = CLOTHES.sample
+  b = CATEGORIES.sample
+  x = Product.create(
+    name: "#{a} #{b} ",
+    description: "#{a} #{b} #{Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 2)} ",
+    category: b,
+    price: rand(20..100),
+    stock: rand(1..10),
+    user_id: 2
+  )
+   x.photo.attach(
+    io: open(Faker::Placeholdit.image(size: '200x200', format: 'jpeg', background_color: :random)),
+    filename: "#{Faker::Lorem.characters(number: 6)}.jpg", content_type: "image/jpeg")
+   x.save!
+ 
+ end
+
+ 6.times do
+  a = CLOTHES.sample
+  b = CATEGORIES.sample
+  x = Product.create(
+    name: "#{a} #{b} ",
+    description: "#{a} #{b} #{Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 2)} ",
+    category: b,
+    price: rand(20..100),
+    stock: rand(1..10),
+    user_id: 3
+  )
+   x.photo.attach(
+    io: open(Faker::Placeholdit.image(size: '200x200', format: 'jpeg', background_color: :random)),
+    filename: "#{Faker::Lorem.characters(number: 6)}.jpg", content_type: "image/jpeg")
+   x.save!
+ 
+ end
 
 puts "Finished!"
