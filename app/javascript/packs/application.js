@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import {recipe} from '../plugins/carousel.js'
 import {recipe2} from '../plugins/carousel2.js'
+import { loadDynamicBannerText } from '../components/banner';
 
 Rails.start()
 Turbolinks.start()
@@ -30,6 +31,7 @@ import { Carousel } from "bootstrap"
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  loadDynamicBannerText();
   recipe();
   recipe2();
 });
