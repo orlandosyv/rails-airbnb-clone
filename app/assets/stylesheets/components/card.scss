@@ -89,7 +89,7 @@
   width: 510px;
 }
 
-.card-product img {
+.img-order {
   height: 100%;
   width: 180px;
   object-fit: cover;
@@ -102,22 +102,32 @@
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  margin-right: 4px;
 }
-
+.card-product a {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+  margin-right: 4px;
+}
 .card-product .card-product-infos {
   padding-left: 16px;
   height: 100%;
   margin-top: 0;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 #review-item{
   align-self:flex-end;
+  position: absolute;
+  top: 150px;
 }
 .container-cards{
   display: flex;

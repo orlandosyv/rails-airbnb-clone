@@ -7,18 +7,19 @@
   <div class="container-cards">
     <% @orders.each do |order| %>
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+      <%= cl_image_tag order.product.photo.key, alt: "", class: "img-order" %>
       <div class="card-product-infos w-100">
         <h2>Producto : <%= order.product.name.capitalize %></h2>
-        <p>> Fecha de compra: <%= order.created_at.localtime.strftime("%d/%m/%Y %I:%M %p") %></p>
-        <p>> Direccion de envio: <%= order.address %></p>
-        <p>> Metodo de pago: <%= order.pay_method %></p>
-      </div>
+        <p>Fecha de compra: <%= order.created_at.localtime.strftime("%d/%m/%Y %I:%M %p") %></p>
+        <p>Direccion de envio: <%= order.address %></p>
+        <p>Metodo de pago: <%= order.pay_method %></p>
         <% if order.reviewed %>
-          <div id="review-item" class="font-weight-bold">Review completo</div>
+          <p id="review-item" class="font-weight-bold align-bottom">Review completo</p>
         <% else %>
-          <div id="review-item"><%= link_to "Dejar Review", new_order_review_path(order) %></div>
+          <p id="review-item"><%= link_to "Dejar Review", new_order_review_path(order) %></p>
         <% end %>
+      </div>
     </div>
     <% end %>
   </div>
