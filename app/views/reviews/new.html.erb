@@ -1,9 +1,14 @@
-<div class="container">
-  <h1>Nuevo review</h1>
-
-  <%= simple_form_for [@order, @review] do |f| %>
-    <%= f.input :content, label: "Comentario" %>
-    <%= f.input :rating %>
-    <%= f.submit %>
-  <% end %>
+<div class="container py-5 px-0">
+  <div class="container">
+    <div class="container bg-white p-5 w-75 rounded">
+      <h2><strong>Nuevo review</strong></h2>
+      <%= simple_form_for [@order, @review] do |f| %>
+        <%= f.input :content, label: "Comentario" %>
+        <%= f.input :rating, label: "Rating (Entre 1 y 5)" %>
+        <div class="d-flex justify-content-center">
+          <%= f.submit value: "Enviar review", class: "btn btn-dark mt-5 btn-lg" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
