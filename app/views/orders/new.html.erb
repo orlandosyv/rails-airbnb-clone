@@ -4,7 +4,9 @@
     <%= simple_form_for [@product, @order], url: product_orders_path do |f| %>
       <%= f.input :address, label: "Dirección" %>
       <%= f.input :pay_method, collection: Order::PAY_METHOD, label: "Método de pago" %>
-      <%= f.submit %>
+      <div class="d-flex justify-content-center">
+        <%= f.submit value: "Confirmar compra", class: "btn btn-dark mt-5 btn-lg" %>
+      </div>
     <% end %>
   </div>
 </div>

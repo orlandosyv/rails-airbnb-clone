@@ -1,6 +1,6 @@
 <div class="container py-5 px-0">
   <div class="container bg-white p-5 w-50 rounded">
-    <h2> <strong> Log in </strong> </h2>
+    <h2> <strong>Iniciar sesion</strong> </h2>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -10,8 +10,9 @@
                     input_html: { autocomplete: "email" } %>
         <%= f.input :password,
                     required: false,
+                    label: "Contraseña",
                     input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.input :remember_me, label: "Recuerdame", as: :boolean if devise_mapping.rememberable? %>
       </div>
 
         <div class="form-actions btn btn-secondary">
